@@ -1,8 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+import { expect } from 'chai';
+
 import App from '../src/App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+const wrapper = shallow(<App />);
+
+describe('App', () => {
+  it('renders...', () => {
+    expect(wrapper).to.have.length(1);
+  });
 });
