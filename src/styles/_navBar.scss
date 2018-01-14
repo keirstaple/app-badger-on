@@ -1,0 +1,104 @@
+// navbar styling
+.navbar-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: $primary-font;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    &:hover {
+      cursor: pointer;
+    }
+    @media screen and (min-width: $break-medium) {
+      flex-direction: row;
+    }
+  }
+  
+  .navbar-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @media screen and (min-width: $break-medium) {
+      flex: 1;
+    }
+  }
+  
+  .navbar-div ul.navbar-closed {
+    display: none;
+    padding-left: 0;
+    li{
+      list-style-type: none;
+    }
+    @media screen and (min-width: $break-medium) {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      font-size: 1em;
+      li {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 10px 10px 10px 10px;
+        border-bottom: none;
+        text-decoration: none;
+        color: $badger-black;
+        &:hover {
+          background-color: #DCF0FF;
+        }
+      }
+    }
+  }
+  
+  .navbar-div ul.navbar-open {
+    padding-left: 0;
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    li {
+      width: 100%;
+      list-style-type: none;
+      margin: 0;
+      padding: 10px;
+      font-size: 1.5em;
+      border-bottom: solid 1px $badger-black;
+    }
+  }
+  
+  .navbar-clickable {
+    cursor: pointer;
+    cursor: hand;
+  }
+  
+  #navbar-image {
+    max-width: 40px;
+    max-height: 40px;
+    @media screen and (min-width: $break-medium) {
+      height: auto;
+      width: auto;
+      max-width: 50px;
+      max-height: 50px;
+    }
+  }
+  
+  .hamburger-icon {
+    float: right;
+    @media screen and (min-width: $break-medium) {
+      display: none;
+    }
+  }
+  
+  #user-photo {
+    max-height: 40px;
+    max-width: 40px;
+    border-radius: 50%;
+  }
+  
+  #user-navbar-info{
+    display: inline-block;
+  }
+  // end navbar syling
