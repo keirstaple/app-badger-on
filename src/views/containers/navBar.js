@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import FontAwesome from 'react-fontawesome';
 import _ from 'lodash';
 
 // import Login from './Login';
@@ -47,7 +46,7 @@ class NavBar extends Component {
               alt={altText}
             />
           </NavLink>
-          <FontAwesome onClick={this.openMenu} id="ham" className="hamburger-icon" name="bars" size="2x" />
+          <button onClick={this.openMenu} id="ham" className="hamburger-icon" name="bars" size="2x" />
         </div>
         <ul className={this.props.navBarStatus}>
           <NavLink className="navbar-clickable" to="/about">About</NavLink>
