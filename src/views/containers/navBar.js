@@ -46,7 +46,14 @@ class NavBar extends Component {
               alt={altText}
             />
           </NavLink>
-          <button onClick={this.openMenu} id="ham" className="hamburger-icon" name="bars" size="2x" />
+          <i
+            onClick={this.openMenu}
+            onKeyPress={this.openMenu}
+            role="button"
+            tabIndex={0}
+            id="ham"
+            className="hamburger-icon fas fa-bars fa-sm"
+          />
         </div>
         <ul className={this.props.navBarStatus}>
           <NavLink className="navbar-clickable" to="/about">About</NavLink>
