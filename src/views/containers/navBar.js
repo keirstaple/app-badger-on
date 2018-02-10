@@ -13,6 +13,7 @@ class NavBar extends Component {
   constructor() {
     super();
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -27,6 +28,10 @@ class NavBar extends Component {
     } else {
       this.props.updateNavBarStatus(navBarClosed);
     }
+  }
+
+  closeMenu() {
+    this.props.updateNavBarStatus(navBarClosed);
   }
 
   render() {
@@ -50,10 +55,10 @@ class NavBar extends Component {
           </div>
         </div>
         <ul className={this.props.navBarStatus}>
-          <NavLink className="navbar-clickable" to="/about">About</NavLink>
-          <NavLink className="navbar-clickable" to="/categories">Categories</NavLink>
-          <NavLink className="navbar-clickable" to="/challenges">Challenges</NavLink>
-          <NavLink className="navbar-clickable" to="/profile">
+          <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/about">About</NavLink>
+          <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/categories">Categories</NavLink>
+          <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/challenges">Challenges</NavLink>
+          <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/profile">
             <i fas className="fas fa-user-circle fa-sm" />
           </NavLink>
           {/* <Login
