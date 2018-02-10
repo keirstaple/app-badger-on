@@ -11,7 +11,7 @@
     &:hover {
       cursor: pointer;
     }
-    @media screen and (min-width: $break-medium) {
+    @media screen and (min-width: $break-small) {
       flex-direction: row;
     }
   }
@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    @media screen and (min-width: $break-medium) {
+    @media screen and (min-width: $break-small) {
       flex: 1;
     }
   }
@@ -30,16 +30,16 @@
   .navbar-div ul.navbar-closed {
     display: none;
     padding-left: 0;
-    li{
+    a {
       list-style-type: none;
     }
-    @media screen and (min-width: $break-medium) {
+    @media screen and (min-width: $break-small) {
       margin: 0;
       padding: 0;
       overflow: hidden;
       display: flex;
       font-size: 1em;
-      li {
+      a {
         float: left;
         color: white;
         text-align: center;
@@ -56,16 +56,20 @@
   
   .navbar-div ul.navbar-open {
     padding-left: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin-top: 40px;
-    li {
+    a {
       width: 100%;
       list-style-type: none;
       margin: 0;
       padding: 10px;
       font-size: 1.5em;
       border-bottom: solid 1px $badger-black;
+    }
+    @media screen and (min-width: $break-small) {
+      flex-direction: row;
     }
   }
   
@@ -77,7 +81,7 @@
   #navbar-image {
     max-width: 40px;
     max-height: 40px;
-    @media screen and (min-width: $break-medium) {
+    @media screen and (min-width: $break-small) {
       height: auto;
       width: auto;
       max-width: 50px;
@@ -87,7 +91,7 @@
   
   .hamburger-icon {
     float: right;
-    @media screen and (min-width: $break-medium) {
+    @media screen and (min-width: $break-small) {
       display: none;
     }
   }

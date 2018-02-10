@@ -64,6 +64,7 @@
     "redux": "^3.7.2",
     "redux-form": "^7.1.2",
     "redux-logger": "^3.0.6",
+    "redux-responsive": "^4.3.5",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "sinon": "^4.1.3",
