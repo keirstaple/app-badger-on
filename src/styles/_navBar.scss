@@ -17,11 +17,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 97.5%;
+    width: 100%;
     padding: 10px;
+    > * {
+      margin: 0 $app-side-spacing;
+    }
     @media screen and (min-width: $break-small) {
       flex: 1;
     }
+
   }
   
   .navbar-div ul.navbar-closed {
@@ -58,9 +62,10 @@
     width: 100%;
     list-style-type: none;
     text-align: right;
+    margin: 0;
     a {
       margin: 0;
-      padding: 10px;
+      padding: $app-side-spacing;
       font-size: 1.5em;
       color: $badger-black;
       text-decoration: none;
