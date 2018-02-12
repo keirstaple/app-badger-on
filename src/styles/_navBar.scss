@@ -7,10 +7,6 @@
     width: 100%;
     font-family: $primary-font;
     font-size: 1.5em;
-    margin-bottom: 30px;
-    &:hover {
-      cursor: pointer;
-    }
     @media screen and (min-width: $break-small) {
       flex-direction: row;
     }
@@ -21,7 +17,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 97.5%;
+    padding: 10px;
     @media screen and (min-width: $break-small) {
       flex: 1;
     }
@@ -43,7 +40,7 @@
         float: left;
         color: white;
         text-align: center;
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
         border-bottom: none;
         text-decoration: none;
         color: $badger-black;
@@ -55,27 +52,24 @@
   }
   
   .navbar-div ul.navbar-open {
-    padding-left: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    margin-top: 40px;
+    width: 100%;
+    list-style-type: none;
+    text-align: right;
     a {
-      width: 100%;
-      list-style-type: none;
       margin: 0;
       padding: 10px;
       font-size: 1.5em;
+      color: $badger-black;
+      text-decoration: none;
       border-bottom: solid 1px $badger-black;
-    }
-    @media screen and (min-width: $break-small) {
-      flex-direction: row;
     }
   }
   
   .navbar-clickable {
     cursor: pointer;
-    cursor: hand;
   }
   
   #navbar-image {

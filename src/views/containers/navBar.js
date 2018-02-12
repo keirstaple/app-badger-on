@@ -50,6 +50,7 @@ class NavBar extends Component {
             onKeyPress={this.toggleMenu}
             role="button"
             tabIndex={0}
+            className="navbar-clickable"
           >
             <i className="hamburger-icon fas fa-bars fa-sm" />
           </div>
