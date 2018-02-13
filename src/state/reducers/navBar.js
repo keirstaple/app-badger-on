@@ -1,11 +1,11 @@
 import UPDATE_NAV_BAR_STATUS from '../../actionTypes/navBar';
 import { navBarClosed } from '../../consts/navBar';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE = {
   navBarStatus: navBarClosed,
 };
 
-const navBar = (state = INITIAL_STATE, action) => {
+export const navBar = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case UPDATE_NAV_BAR_STATUS:
       return {
@@ -16,5 +16,3 @@ const navBar = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
-
-export default navBar;
