@@ -1,12 +1,11 @@
-const INITIAL_STATE = {
-  appInitialized: false,
-};
+// import navBar from './navBar';
+// const INITIAL_STATE = {
+//   appInitialized: false,
+// };
 
-const reducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+// const app = (state = INITIAL_STATE, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };

@@ -1,19 +1,22 @@
 import createBrowserHistory from 'history/createBrowserHistory';
 import { routerMiddleware } from 'react-router-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
+import { responsiveStoreEnhancer } from 'redux-responsive';
 import thunk from 'redux-thunk';
 
 import reducers from '../state/reducers';
 
 const browserHistory = createBrowserHistory();
-const middleware = [thunk, routerMiddleware(browserHistory), createLogger()];
 
 // Adds the reducer to the store on the `routing` key
 const store = () => {
   const storeInstance = createStore(
     reducers,
-    applyMiddleware(middleware),
+    compose(
+      responsiveStoreEnhancer,
+      applyMiddleware(thunk, routerMiddleware(browserHistory), createLogger()),
+    ),
   );
 
   if (module.hot) {
