@@ -80,7 +80,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "NODE_ENV=development mocha ./test/testSetup.js ./test/configureEnzyme.js ./test/**/*test.js"
+    "test": "mocha ./test/testSetup.js ./test/configureEnzyme.js ./test/**/*test.js",
+    "test-watch": "mocha ./test/testSetup.js ./test/configureEnzyme.js ./test/**/*test.js --watch"
   },
   "babel": {
     "presets": [
