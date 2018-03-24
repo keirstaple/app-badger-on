@@ -60,7 +60,7 @@ class NavBar extends Component {
           <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/categories">Categories</NavLink>
           <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/challenges">Challenges</NavLink>
           <NavLink className="navbar-clickable" onClick={this.closeMenu} to="/profile">
-            <i fas className="fas fa-user-circle fa-sm" />
+            <i fas="true" className="fas fa-user-circle fa-sm" />
           </NavLink>
           {/* <Login
             logIn={this.props.logIn}
@@ -77,7 +77,38 @@ class NavBar extends Component {
 NavBar.propTypes = {
   updateNavBarStatus: PropTypes.func.isRequired,
   navBarStatus: PropTypes.string.isRequired,
-  browser: PropTypes.objectOf(PropTypes.object).isRequired,
+  browser: PropTypes.shape({
+    breakpoints: PropTypes.shape({
+      extraSmall: PropTypes.number,
+      infinity: PropTypes.number,
+      large: PropTypes.number,
+      medium: PropTypes.number,
+      small: PropTypes.number,
+    }),
+    greaterThan: PropTypes.shape({
+      extraSmall: PropTypes.bool,
+      infinity: PropTypes.bool,
+      large: PropTypes.bool,
+      medium: PropTypes.bool,
+      small: PropTypes.bool.isRequired,
+    }),
+    is: PropTypes.shape({
+      extraSmall: PropTypes.bool,
+      infinity: PropTypes.bool,
+      large: PropTypes.bool,
+      medium: PropTypes.bool,
+      small: PropTypes.bool,
+    }),
+    lessThan: PropTypes.shape({
+      extraSmall: PropTypes.bool,
+      infinity: PropTypes.bool,
+      large: PropTypes.bool,
+      medium: PropTypes.bool,
+      small: PropTypes.bool,
+    }),
+    mediaType: PropTypes.string,
+    orientation: PropTypes.string,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
