@@ -2,8 +2,11 @@
   "extends": "airbnb",
   "rules": {
       "react/jsx-filename-extension": 0,
+      "react/jsx-indent": ["error", 2],
+      "react/jsx-indent-props": ["error", 2],
       "max-len": ["error", { "code": 200 }],
-      "no-console": ["error", { "allow": ["warn", "error", "log"] }]
+      "no-console": ["error", { "allow": ["warn", "error", "log"] }],
+      "indent": ["error", 2]
   },
   "env": {
     "browser": true,
