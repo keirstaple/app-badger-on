@@ -11,12 +11,13 @@ const Home = () => (
 );
 
 const dataPath = 'badges';
-
 const enhance = compose(
   firebaseConnect([dataPath]),
   connect(({ firebaseDataStore }) => ({
     badges: firebaseDataStore.data[dataPath],
   })),
 );
+
+export const baseComponent = Home;
 
 export default enhance(Home);
