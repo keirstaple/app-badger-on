@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import configureStore from './store';
-import App from './App';
+import Home from './views/containers/Home';
 
 import './styles/index.scss';
 
@@ -16,7 +16,7 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Route path="/" component={App}>
+      <Route path="/" component={Home}>
         {/*<Route path="foo" component={Foo}/>*/}
         {/*<Route path="bar" component={Bar}/>*/}
       </Route>

@@ -7,12 +7,12 @@ export const INITIAL_STATE = {
 
 export const navBar = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case UPDATE_NAV_BAR_STATUS:
-      return {
-        ...state,
-        navBarStatus: action.status,
-      };
-    default:
-      return state;
+  case UPDATE_NAV_BAR_STATUS:
+    return {
+      ...state,
+      navBarStatus: action.status,
+    };
+  default:
+    return state;
   }
 };
