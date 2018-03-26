@@ -3,10 +3,12 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import NavBar from './navBar';
+import RandomBadges from './randomBadges';
 
 const Home = () => (
-  <div className="App">
+  <div className="home-container">
     <NavBar />
+    <RandomBadges />
   </div>
 );
 
