@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RandomBadgeTile = ({ randomBadge }) => {
-  console.log(randomBadge);
+  console.log('~~~', randomBadge);
   return <div />;
 };
 
