@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// import badgeCategoryDetails from '../../consts/badgeCategoryDetails';
+
 const RandomBadgeTile = ({ randomBadge }) => {
-  console.log('~~~', randomBadge);
+  console.log(randomBadge);
   return <div />;
 };
 
