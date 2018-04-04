@@ -2,13 +2,17 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import { baseComponent as Home } from '../../../src/views/containers/Home';
+import { baseComponent as Home } from '../../../src/views/containers/home';
+import RandomBadges from '../../../src/views/containers/randomBadges';
 
 const wrapper = shallow(<Home />);
 
 describe('Home', () => {
-  it('renders...', () => {
+  it('should render', () => {
     expect(wrapper).to.have.length(1);
-    expect(wrapper.find('.App').hasClass('App')).to.equal(true);
+    expect(wrapper.find('.home-container').hasClass('home-container')).to.equal(true);
+  });
+  it('should render the RandomBadges container', () => {
+    expect(wrapper.find(RandomBadges).length).to.equal(1);
   });
 });
