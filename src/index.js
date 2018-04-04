@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import configureStore from './store';
-import Home from './views/containers/home';
+import Home from './views/containers/Home';
 
 import './styles/index.scss';
 
