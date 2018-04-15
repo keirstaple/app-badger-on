@@ -25,10 +25,6 @@ class RandomBadges extends Component {
   }
 }
 
-RandomBadges.defaultProps = {
-  randomBadges: [{ value: {} }],
-};
-
 RandomBadges.propTypes = {
   randomBadges: PropTypes.arrayOf(PropTypes.shape({
     category: PropTypes.number,
@@ -46,7 +42,7 @@ RandomBadges.propTypes = {
     proof: PropTypes.string,
     pushId: PropTypes.number,
     tags: PropTypes.string,
-  })),
+  })).isRequired,
 };
 
 export const baseComponent = RandomBadges;

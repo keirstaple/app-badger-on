@@ -3,7 +3,10 @@ import shuffle from 'lodash/shuffle';
 
 import RANDOM_BADGE_COUNT from '../../consts/randomBadges';
 
-const stateBadges = state => state.firebaseDataStore.data.badges;
+const locallyPersistedBadges = state => state.badges.locallyPersistedBadges;
+const cloudPersistedBadges = state => state.badges.cloudPersistedBadges;
+
+const stateBadges = locallyPersistedBadges || cloudPersistedBadges;
 
 const randomBadgesSelector = createSelector(
   stateBadges,

@@ -22,6 +22,7 @@ const reactReduxFirebaseConfig = {
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['firebaseDataStore'],
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 
