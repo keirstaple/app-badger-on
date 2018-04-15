@@ -2,20 +2,20 @@ const categories = [
   {
     category: 0,
     categoryName: '000 - GENERAL KNOWLEDGE',
-    textColors: '#4C4C4C',
-    backgroundColors: '#989DA7',
+    textColor: '#4C4C4C',
+    backgroundColor: '#989DA7',
   },
   {
     category: 100,
     categoryName: '100 - PHILOSOPHY & PSYCHOLOGY',
-    textColors: '#0079A5',
-    backgroundColors: '#DCF0FF',
+    textColor: '#0079A5',
+    backgroundColor: '#DCF0FF',
   },
   {
     category: 200,
     categoryName: '200 - RELIGION',
-    textColors: '#66008D',
-    backgroundColors: '#D0C0D6',
+    textColor: '#66008D',
+    backgroundColor: '#D0C0D6',
   },
   {
     category: 300,

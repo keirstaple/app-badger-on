@@ -1,11 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import pick from 'lodash/fp/pick';
 
-// import badgeCategoryDetails from '../../consts/badgeCategoryDetails';
+import ClipBadgeDescription from './clipBadgeDescription';
+
+import getBadgeCategoryDetails from '../../utils/getBadgeCategoryDetails';
 
 const RandomBadgeTile = ({ randomBadge }) => {
-  console.log(randomBadge);
-  return <div />;
+  const {
+    imageUrl,
+    name,
+    proof,
+    description,
+  } = pick(['imageUrl', 'name', 'proof', 'description'])(randomBadge);
+
+  const { categoryName, textColor, backgroundColor } = getBadgeCategoryDetails(randomBadge);
+  return (
+    <div
+      className="badge-tile hover-hand random-badge-content"
+      style={{ backgroundColor }}
+    >
+      <div className="badge-tile-image-details">
+        <img className="detail-image" src={imageUrl} alt={name} />
+        <div className="badge-tile-details">
+          <h1 style={{ color: textColor }}>{name}</h1>
+          <span className="badge-tile-subtitle" style={{ color: textColor }}>To do: </span>
+          <ClipBadgeDescription description={description} />
+          <span className="badge-tile-subtitle" style={{ color: textColor }}>Proof: </span>
+          <span className="badge-tile-description">{proof}</span>
+        </div>
+      </div>
+      <h1 className="badge-tile-category" style={{ color: textColor }}>{categoryName}</h1>
+    </div>
+  );
 };
 
 RandomBadgeTile.propTypes = {
