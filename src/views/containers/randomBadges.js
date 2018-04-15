@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import RandomBadgeTile from '../components/randomBadgeTile';
+import RandomBadgeTile from '../components/randomBadge/randomBadgeTile';
 import randomBadgesSelector from '../../state/selectors/randomBadgesSelector';
 
 class RandomBadges extends Component {
@@ -15,13 +15,19 @@ class RandomBadges extends Component {
     return (
       <div className="random-badges-container">
         {
-          randomBadges.map(randomBadge =>
-            <RandomBadgeTile key={randomBadge.pushId} randomBadge={randomBadge.value} />)
+          randomBadges.map((randomBadge) => {
+            const { value } = randomBadge;
+            return <RandomBadgeTile key={randomBadge.pushId} randomBadge={value} />;
+          })
         }
       </div>
     );
   }
 }
+
+RandomBadges.defaultProps = {
+  randomBadges: [{ value: {} }],
+};
 
 RandomBadges.propTypes = {
   randomBadges: PropTypes.arrayOf(PropTypes.shape({
@@ -40,7 +46,7 @@ RandomBadges.propTypes = {
     proof: PropTypes.string,
     pushId: PropTypes.number,
     tags: PropTypes.string,
-  })).isRequired,
+  })),
 };
 
 export const baseComponent = RandomBadges;

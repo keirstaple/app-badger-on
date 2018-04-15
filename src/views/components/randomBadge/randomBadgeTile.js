@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pick from 'lodash/fp/pick';
 
-import ClipBadgeDescription from './clipBadgeDescription';
+import RandomBadgeDescription from './randomBadgeDescription';
 
-import getBadgeCategoryDetails from '../../utils/getBadgeCategoryDetails';
+import getBadgeCategoryDetails from '../../../utils/getBadgeCategoryDetails';
 
 const RandomBadgeTile = ({ randomBadge }) => {
   const {
@@ -12,9 +12,9 @@ const RandomBadgeTile = ({ randomBadge }) => {
     name,
     proof,
     description,
-  } = pick(['imageUrl', 'name', 'proof', 'description'])(randomBadge);
+  } = randomBadge ? pick(['imageUrl', 'name', 'proof', 'description'])(randomBadge) : '';
+  const { categoryName, textColor, backgroundColor } = randomBadge ? getBadgeCategoryDetails(randomBadge) : '';
 
-  const { categoryName, textColor, backgroundColor } = getBadgeCategoryDetails(randomBadge);
   return (
     <div
       className="badge-tile hover-hand random-badge-content"
@@ -25,7 +25,7 @@ const RandomBadgeTile = ({ randomBadge }) => {
         <div className="badge-tile-details">
           <h1 style={{ color: textColor }}>{name}</h1>
           <span className="badge-tile-subtitle" style={{ color: textColor }}>To do: </span>
-          <ClipBadgeDescription description={description} />
+          <RandomBadgeDescription description={description} />
           <span className="badge-tile-subtitle" style={{ color: textColor }}>Proof: </span>
           <span className="badge-tile-description">{proof}</span>
         </div>
