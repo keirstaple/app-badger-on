@@ -17,7 +17,7 @@ class RandomBadges extends Component {
         {
           randomBadges.map((randomBadge) => {
             const { value } = randomBadge;
-            return <RandomBadgeTile key={randomBadge.pushId} randomBadge={value} />;
+            return <RandomBadgeTile key={randomBadge.key} randomBadge={value} />;
           })
         }
       </div>
