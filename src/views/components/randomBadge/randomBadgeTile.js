@@ -23,7 +23,7 @@ const RandomBadgeTile = ({ randomBadge }) => {
       <div className="badge-tile-image-details">
         <img className="detail-image" src={imageUrl} alt={name} />
         <div className="badge-tile-details">
-          <h1 style={{ color: textColor }}>{name}</h1>
+          <h1 className="badge-tile-name" style={{ color: textColor }}>{name}</h1>
           <span className="badge-tile-subtitle" style={{ color: textColor }}>
             To do:
           </span>

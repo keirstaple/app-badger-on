@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import shuffle from 'lodash/shuffle';
 
-import RANDOM_BADGE_COUNT from '../../consts/randomBadges';
+import { RANDOM_BADGE_COUNT } from '../../consts/randomBadges';
 
 const locallyPersistedBadges = state => state.badges.locallyPersistedBadges;
 const cloudPersistedBadges = state => state.badges.cloudPersistedBadges;

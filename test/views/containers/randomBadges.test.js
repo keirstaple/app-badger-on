@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import { baseComponent as RandomBadges } from '../../../src/views/containers/randomBadges';
 import RandomBadgeTile from '../../../src/views/components/randomBadge/randomBadgeTile';
 import randomBadgesSelector from '../../../src/state/selectors/randomBadgesSelector';
-import RANDOM_BADGE_COUNT from '../../../src/consts/randomBadges';
+import { RANDOM_BADGE_COUNT } from '../../../src/consts/randomBadges';
 
 import mockState from '../../mocks/mockState';
 
