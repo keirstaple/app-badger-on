@@ -24,9 +24,14 @@ const RandomBadgeTile = ({ randomBadge }) => {
         <img className="detail-image" src={imageUrl} alt={name} />
         <div className="badge-tile-details">
           <h1 style={{ color: textColor }}>{name}</h1>
-          <span className="badge-tile-subtitle" style={{ color: textColor }}>To do: </span>
+          <span className="badge-tile-subtitle" style={{ color: textColor }}>
+            To do:
+          </span>
           <RandomBadgeDescription description={description} />
-          <span className="badge-tile-subtitle" style={{ color: textColor }}>Proof: </span>
+          <br />
+          <span className="badge-tile-subtitle" style={{ color: textColor }}>
+            Proof:
+          </span>
           <span className="badge-tile-description">{proof}</span>
         </div>
       </div>
