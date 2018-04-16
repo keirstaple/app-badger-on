@@ -14,6 +14,8 @@ class RandomBadges extends Component {
     const { randomBadges } = this.props;
     return (
       <div className="random-badges-container">
+        <h2 className="section-header">RANDOM BADGES</h2>
+        <div className="break" />
         {
           randomBadges.map((randomBadge) => {
             const { value } = randomBadge;
