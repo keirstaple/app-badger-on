@@ -1,6 +1,8 @@
 import createBrowserHistory from 'history/createBrowserHistory';
 import { routerMiddleware } from 'react-router-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { createLogger } from 'redux-logger';
 import { responsiveStoreEnhancer } from 'redux-responsive';
 import { reactReduxFirebase } from 'react-redux-firebase';
@@ -17,12 +19,19 @@ const reactReduxFirebaseConfig = {
   userProfile: 'users',
 };
 
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['firebaseDataStore'],
+};
+const persistedReducer = persistReducer(persistConfig, reducers);
+
 // Adds the reducer to the store on the `routing` key
 const store = () => {
   /* eslint-disable no-underscore-dangle */
   const createStoreWithFirebase = compose(reactReduxFirebase(firebase, reactReduxFirebaseConfig))(createStore);
   const storeInstance = createStoreWithFirebase(
-    reducers,
+    persistedReducer,
     compose(
       responsiveStoreEnhancer,
       applyMiddleware(thunk, routerMiddleware(browserHistory), createLogger()),
@@ -38,7 +47,9 @@ const store = () => {
     });
   }
 
-  return storeInstance;
+  const persistor = persistStore(storeInstance);
+
+  return { storeInstance, persistor };
 };
 
 export default store;

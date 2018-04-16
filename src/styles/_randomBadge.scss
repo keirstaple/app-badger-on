@@ -1,0 +1,81 @@
+.random-badges-container {
+  padding: $app-side-spacing;
+}
+
+.random-badge-content {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.random-badge-div {
+  font-family: $primary-font;
+}
+
+.break {
+  border-radius: 5px;
+  background: $badger-black;
+  height: 2px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.badge-tile-category {
+  background-color: $badger-white;
+  font-family: $primary-font;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 5px 0px 3px;
+}
+
+.badge-tile {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.detail-image {
+  height: 100%;
+  width: auto;
+  max-width: 125px;
+  max-height: 125px;
+}
+
+.badge-tile-details {
+  padding: 0 10px;
+  h1 {
+    font-family: $primary-font;
+    font-size: 1.5em;
+  }
+  .badge-tile-subtitle {
+    font-family: $primary-font;
+    display: none;
+    margin-right: 5px;
+    @media screen and (min-width: $break-medium) {
+      display: inline;
+      font-size: 1.15em;
+    }
+  }
+  .badge-tile-description {
+    font-family: $secondary-font;
+    display: none;
+    @media screen and (min-width: $break-medium) {
+      display: inline;
+      font-size: 1em;
+    }
+  }
+}
+
+.badge-tile-image-details {
+  display: flex;
+
+}
+
+.read-more {
+  text-decoration: underline;
+  color: #3F7FFF;
+  font-size: 1em;
+}

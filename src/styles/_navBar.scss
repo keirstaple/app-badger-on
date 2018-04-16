@@ -36,7 +36,7 @@
     }
     @media screen and (min-width: $break-small) {
       margin: 0;
-      padding: 0;
+      padding-right: $app-side-spacing;
       overflow: hidden;
       display: flex;
       font-size: 1em;

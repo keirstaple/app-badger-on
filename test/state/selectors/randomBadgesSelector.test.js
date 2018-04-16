@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import uniq from 'lodash/uniq';
 
-import RANDOM_BADGE_COUNT from '../../../src/consts/randomBadges';
+import { RANDOM_BADGE_COUNT } from '../../../src/consts/randomBadges';
 import randomBadgesSelector from '../../../src/state/selectors/randomBadgesSelector';
 import mockState from '../../mocks/mockState';
 
