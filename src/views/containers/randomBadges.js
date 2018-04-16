@@ -17,10 +17,7 @@ class RandomBadges extends Component {
         <h2 className="section-header">RANDOM BADGES</h2>
         <div className="break" />
         {
-          randomBadges.map((randomBadge) => {
-            const { value } = randomBadge;
-            return <RandomBadgeTile key={randomBadge.key} randomBadge={value} />;
-          })
+          randomBadges.map(({ key, value }) => <RandomBadgeTile key={key} randomBadge={value} />)
         }
       </div>
     );
