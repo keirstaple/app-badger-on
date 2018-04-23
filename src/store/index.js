@@ -11,18 +11,19 @@ import thunk from 'redux-thunk';
 
 import reducers from '../state/reducers';
 import firebaseConfig from './firebaseConfig';
+import { FIREBASE_REDUCER_NAME, DATA_PATHS } from '../consts/firebase';
 
 firebase.initializeApp(firebaseConfig);
 
 const browserHistory = createBrowserHistory();
 const reactReduxFirebaseConfig = {
-  userProfile: 'users',
+  userProfile: DATA_PATHS.USERS,
 };
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['firebaseDataStore'],
+  whitelist: [FIREBASE_REDUCER_NAME],
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 

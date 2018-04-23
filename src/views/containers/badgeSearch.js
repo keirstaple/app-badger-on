@@ -1,12 +1,17 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { compose } from 'redux';
+import { Field, reduxForm, getFormValues } from 'redux-form';
 
-import { BADGE_SEARCH_FORM } from '../../consts/form';
+import { BADGE_SEARCH_FORM, FORM_FIELDS } from '../../consts/form';
 
-const BadgeSearch = ({}) => {
+const BadgeSearch = ({ values }) => {
+  console.log(values);
   return (
-    <div>
+    <div className="badge-search-container">
       <Field
+        name={FORM_FIELDS.BADGE_FUZZY_SEARCH}
         component="input"
         type="text"
       />
@@ -14,6 +19,20 @@ const BadgeSearch = ({}) => {
   );
 };
 
-export default reduxForm({
-  form: BADGE_SEARCH_FORM,
-})(BadgeSearch);
+BadgeSearch.defaultProps = {
+  values: {},
+};
+
+BadgeSearch.propTypes = {
+  values: PropTypes.shape({}),
+};
+
+export default compose(
+  reduxForm({
+    form: BADGE_SEARCH_FORM,
+  }),
+  connect(state => ({
+    values: getFormValues(BADGE_SEARCH_FORM)(state),
+  })),
+)(BadgeSearch);
+
