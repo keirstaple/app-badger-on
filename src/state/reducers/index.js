@@ -14,7 +14,7 @@ const reducers = combineReducers({
   form: formReducer,
   navBar,
   badges,
-  routing: routerReducer,
+  router: routerReducer,
 });
 
 export default reducers;
