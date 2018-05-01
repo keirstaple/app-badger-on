@@ -85,6 +85,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "start-mock": "node scripts/startMock.js",
     "build": "node scripts/build.js",
     "test": "mocha ./test/testSetup.js ./test/configureEnzyme.js ./test/**/*test.js",
     "test-watch": "mocha ./test/testSetup.js ./test/configureEnzyme.js ./test/**/*test.js --watch"
