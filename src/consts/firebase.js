@@ -4,5 +4,3 @@ export const DATA_PATHS = {
 };
 
 export const FIREBASE_REDUCER_NAME = 'firebaseDataStore';
-
-export default DATA_PATHS;

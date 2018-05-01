@@ -10,23 +10,27 @@ import { BADGE_SEARCH_FORM, FORM_FIELDS } from '../../consts/form';
 const { BADGE_FUZZY_SEARCH } = FORM_FIELDS;
 
 class BadgeSearch extends Component {
-  // componenDidMount() {
-
-  // }
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props[BADGE_FUZZY_SEARCH] !== nextProps[BADGE_FUZZY_SEARCH]) {
-  //     nextProps.change(BADGE_FUZZY_SEARCH, nextProps[BADGE_FUZZY_SEARCH]);
-  //   }
-  // }
-  render() {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+  componentWillReceiveProps(nextProps) {
+    if (this.props[BADGE_FUZZY_SEARCH] !== nextProps[BADGE_FUZZY_SEARCH]) {
+      nextProps.change(BADGE_FUZZY_SEARCH, nextProps[BADGE_FUZZY_SEARCH]);
+    }
+  }
+  handleChange(e, value) {
     const { pushURI } = this.props;
+    pushURI(`/search/${encodeURIComponent(value)}`);
+  }
+  render() {
     return (
       <div className="badge-search-container">
         <Field
           name={BADGE_FUZZY_SEARCH}
           component="input"
           type="text"
-          onChange={(e, value) => pushURI(`/search/${encodeURI(value)}`)}
+          onChange={this.handleChange}
         />
       </div>
     );

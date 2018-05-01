@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import pick from 'lodash/fp/pick';
 
-import RandomBadgeDescription from './randomBadgeDescription';
+import BadgeDescription from './badgeDescription';
 
-import getBadgeCategoryDetails from '../../../utils/getBadgeCategoryDetails';
+import getBadgeCategoryDetails from '../../utils/getBadgeCategoryDetails';
 
-const RandomBadgeTile = ({ randomBadge }) => {
+const BadgeTile = ({ randomBadge }) => {
   const {
     imageUrl,
     name,
@@ -27,7 +27,7 @@ const RandomBadgeTile = ({ randomBadge }) => {
           <span className="badge-tile-subtitle" style={{ color: textColor }}>
             To do:
           </span>
-          <RandomBadgeDescription description={description} />
+          <BadgeDescription description={description} />
           <br />
           <span className="badge-tile-subtitle" style={{ color: textColor }}>
             Proof:
@@ -40,7 +40,7 @@ const RandomBadgeTile = ({ randomBadge }) => {
   );
 };
 
-RandomBadgeTile.propTypes = {
+BadgeTile.propTypes = {
   randomBadge: PropTypes.shape({
     category: PropTypes.number,
     challenges: PropTypes.string,
@@ -60,4 +60,4 @@ RandomBadgeTile.propTypes = {
   }).isRequired,
 };
 
-export default RandomBadgeTile;
+export default BadgeTile;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import RandomBadgeTile from '../components/randomBadge/randomBadgeTile';
+import BadgeTile from '../components/badgeTile';
 import randomBadgesSelector from '../../state/selectors/randomBadgesSelector';
 
 class RandomBadges extends Component {
@@ -17,7 +17,7 @@ class RandomBadges extends Component {
         <h2 className="section-header">RANDOM BADGES</h2>
         <div className="break" />
         {
-          randomBadges.map(({ key, value }) => <RandomBadgeTile key={key} randomBadge={value} />)
+          randomBadges.map(({ key, value }) => <BadgeTile key={key} randomBadge={value} />)
         }
       </div>
     );
