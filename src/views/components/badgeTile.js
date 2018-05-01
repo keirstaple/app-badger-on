@@ -8,14 +8,14 @@ import getBadgeCategoryDetails from '../../utils/getBadgeCategoryDetails';
 
 import badgePropType from '../../consts/propTypes';
 
-const BadgeTile = ({ randomBadge }) => {
+const BadgeTile = ({ badge }) => {
   const {
     imageUrl,
     name,
     proof,
     description,
-  } = randomBadge ? pick(['imageUrl', 'name', 'proof', 'description'])(randomBadge) : '';
-  const { categoryName, textColor, backgroundColor } = randomBadge ? getBadgeCategoryDetails(randomBadge) : '';
+  } = badge ? pick(['imageUrl', 'name', 'proof', 'description'])(badge) : '';
+  const { categoryName, textColor, backgroundColor } = badge ? getBadgeCategoryDetails(badge) : '';
 
   return (
     <div
@@ -43,7 +43,7 @@ const BadgeTile = ({ randomBadge }) => {
 };
 
 BadgeTile.propTypes = {
-  randomBadge: PropTypes.shape(badgePropType).isRequired,
+  badge: PropTypes.shape(badgePropType).isRequired,
 };
 
 export default BadgeTile;

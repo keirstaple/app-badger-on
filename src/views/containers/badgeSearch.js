@@ -5,12 +5,13 @@ import { compose } from 'redux';
 import { Field, reduxForm, getFormValues } from 'redux-form';
 import { push } from 'react-router-redux';
 
-import BadgeList from '../components/badgeList';
+import BadgeSearchList from '../components/badgeSearchList';
 
 import filteredBadgesBySearchTerm from '../../state/selectors/filteredBadgesBySearchTerm';
 
-import { BADGE_SEARCH_FORM, FORM_FIELDS } from '../../consts/form';
 import badgePropType from '../../consts/propTypes';
+import { BADGE_SEARCH_FORM, FORM_FIELDS } from '../../consts/form';
+import { rootSearch } from '../../consts/routeParams';
 
 const { BADGE_FUZZY_SEARCH } = FORM_FIELDS;
 
@@ -26,7 +27,7 @@ class BadgeSearch extends Component {
   }
   handleChange(e, value) {
     const { pushURI } = this.props;
-    pushURI(`/search/${encodeURIComponent(value)}`);
+    pushURI(`${rootSearch}${encodeURIComponent(value)}`);
   }
   render() {
     const { searchedBadges } = this.props;
@@ -38,7 +39,7 @@ class BadgeSearch extends Component {
           type="text"
           onChange={this.handleChange}
         />
-        <BadgeList searchedBadges={searchedBadges} />
+        <BadgeSearchList searchedBadges={searchedBadges} />
       </div>
     );
   }

@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import BadgeTile from '../components/badgeTile';
+
 import randomBadgesSelector from '../../state/selectors/randomBadgesSelector';
 
 import badgePropType from '../../consts/propTypes';
+import { RANDOM_BADGES_HEADER } from '../../consts/randomBadges';
 
 class RandomBadges extends Component {
   constructor(props) {
@@ -16,10 +18,10 @@ class RandomBadges extends Component {
     const { randomBadges } = this.props;
     return (
       <div className="random-badges-container">
-        <h2 className="section-header">RANDOM BADGES</h2>
+        <h2 className="section-header">{RANDOM_BADGES_HEADER}</h2>
         <div className="break" />
         {
-          randomBadges.map(({ key, value }) => <BadgeTile key={key} randomBadge={value} />)
+          randomBadges.map(({ key, value }) => <BadgeTile key={key} badge={value} />)
         }
       </div>
     );
