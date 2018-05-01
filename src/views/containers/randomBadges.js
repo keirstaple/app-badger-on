@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import BadgeTile from '../components/badgeTile';
 import randomBadgesSelector from '../../state/selectors/randomBadgesSelector';
 
+import badgePropType from '../../consts/propTypes';
+
 class RandomBadges extends Component {
   constructor(props) {
     super(props);
@@ -25,23 +27,7 @@ class RandomBadges extends Component {
 }
 
 RandomBadges.propTypes = {
-  randomBadges: PropTypes.arrayOf(PropTypes.shape({
-    category: PropTypes.number,
-    challenges: PropTypes.string,
-    comments: PropTypes.string,
-    creator: PropTypes.string,
-    date: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    index: PropTypes.string,
-    latitude: PropTypes.number,
-    longitude: PropTypes.number,
-    name: PropTypes.string,
-    originalIndex: PropTypes.number,
-    proof: PropTypes.string,
-    pushId: PropTypes.number,
-    tags: PropTypes.string,
-  })).isRequired,
+  randomBadges: PropTypes.arrayOf(badgePropType).isRequired,
 };
 
 export const baseComponent = RandomBadges;
