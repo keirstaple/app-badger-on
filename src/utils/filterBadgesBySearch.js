@@ -1,7 +1,12 @@
 import Fuse from 'fuse.js';
 
-const filteredBadgesBySearchTerm = (badges, query) => (badges ? new Fuse(badges, {
-  keys: ['name', 'description', 'tags'],
-}).search(query) : []);
+const filterBadgesBySearchTerm = (badges, query) => {
+  if (badges) {
+    return new Fuse(badges, {
+      keys: ['value.name', 'value.description', 'value.tags'],
+    }).search(query);
+  }
+  return [];
+};
 
-export default filteredBadgesBySearchTerm;
+export default filterBadgesBySearchTerm;
