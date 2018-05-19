@@ -1,4 +1,4 @@
 {
- "presets": ["react", "es2015"],
- "plugins": ["transform-object-rest-spread"]
+ "presets": ["react", "es2015", "stage-0", "stage-1", "stage-3"],
+ "plugins": ["transform-es2015-modules-commonjs", "transform-object-rest-spread"]
 }
