@@ -1,6 +1,7 @@
 import { REHYDRATE } from 'redux-persist/lib/constants';
 import { actionTypes as firebaseActionTypes } from 'react-redux-firebase';
 import getProp from 'lodash/fp/get';
+import isEmpty from 'lodash/fp/isEmpty';
 
 export const getInitialState = () => ({
   locallyPersistedBadges: {},
@@ -8,17 +9,22 @@ export const getInitialState = () => ({
 });
 
 export const badges = (state = getInitialState(), action) => {
+  const locallyPersistedBadges = getProp('payload.locallyPersistedBadges')(action);
+  const cloudPersistedBadges = getProp('ordered')(action);
   switch (action.type) {
   case REHYDRATE:
     return {
       ...state,
-      locallyPersistedBadges: getProp('payload.firebaseDataStore.ordered.badges')(action),
+      locallyPersistedBadges,
     };
   case firebaseActionTypes.SET:
-    return {
-      ...state,
-      cloudPersistedBadges: getProp('ordered')(action),
-    };
+    return !isEmpty(cloudPersistedBadges)
+      ? {
+        ...state,
+        cloudPersistedBadges,
+        locallyPersistedBadges: cloudPersistedBadges,
+      }
+      : state;
   default:
     return state;
   }
