@@ -6,10 +6,11 @@ import { badges as mockBadges } from '../../mocks/mockBadges.json';
 const cloudPersistedBadges = state => state.badges.cloudPersistedBadges;
 const locallyPersistedBadges = state => state.badges.locallyPersistedBadges;
 
+// TODO: This isn't actually working offline
 const stateBadges = createSelector(
   cloudPersistedBadges,
   locallyPersistedBadges,
-  (cloud, local) => cloud || local,
+  (cloud, local) => (cloud || local),
 );
 
 // TODO: change this to @mars package version of an env variable if needed for integration tests
