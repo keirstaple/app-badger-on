@@ -29,7 +29,7 @@ class RandomBadges extends Component {
 }
 
 RandomBadges.propTypes = {
-  randomBadges: PropTypes.arrayOf(badgePropType).isRequired,
+  randomBadges: PropTypes.arrayOf(PropTypes.shape(badgePropType)).isRequired,
 };
 
 export const baseComponent = RandomBadges;

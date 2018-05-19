@@ -14,7 +14,7 @@ const BadgeSearchList = ({ searchedBadges }) => (
 );
 
 BadgeSearchList.propTypes = {
-  searchedBadges: PropTypes.arrayOf(badgePropType).isRequired,
+  searchedBadges: PropTypes.arrayOf(PropTypes.shape(badgePropType)).isRequired,
 };
 
 export default BadgeSearchList;
