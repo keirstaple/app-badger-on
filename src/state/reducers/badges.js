@@ -2,11 +2,12 @@ import { REHYDRATE } from 'redux-persist/lib/constants';
 import { actionTypes as firebaseActionTypes } from 'react-redux-firebase';
 import getProp from 'lodash/fp/get';
 
-export const INITIAL_STATE = {
-  persistedBadges: {},
-};
+export const getInitialState = () => ({
+  locallyPersistedBadges: {},
+  cloudPersistedBadges: {},
+});
 
-export const badges = (state = INITIAL_STATE, action) => {
+export const badges = (state = getInitialState(), action) => {
   switch (action.type) {
   case REHYDRATE:
     return {
