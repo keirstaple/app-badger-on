@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default {
+const badgeProp = {
   category: PropTypes.number,
   challenges: PropTypes.string,
   comments: PropTypes.string,
@@ -17,3 +17,5 @@ export default {
   pushId: PropTypes.number,
   tags: PropTypes.string,
 };
+
+export default badgeProp;

@@ -1,3 +1,5 @@
-export default {
+const routeParams = {
   rootSearch: '/search/',
 };
+
+export default routeParams;
