@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import shuffle from 'lodash/shuffle';
 
-import stateBadges from './utils/stateBadges';
+import stateBadges from './stateBadges';
 
 import { RANDOM_BADGE_COUNT } from '../../consts/randomBadges';
 
