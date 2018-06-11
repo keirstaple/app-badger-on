@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 
-import { baseComponent as Home } from '../../../src/views/containers/Home';
+import Home from '../../../src/views/containers/Home';
 import RandomBadges from '../../../src/views/containers/randomBadges';
 
 const wrapper = shallow(<Home />);
