@@ -9,7 +9,7 @@ import { RANDOM_BADGE_COUNT } from '../../../src/consts/randomBadges';
 
 import mockState from '../../mocks/mockState';
 
-describe('RandomBadges', () => {
+describe(`<${RandomBadges.name} />`, () => {
   const defaultProps = {
     randomBadges: randomBadgesSelector(mockState),
   };

@@ -7,7 +7,7 @@ import RandomBadges from '../../../src/views/containers/randomBadges';
 
 const wrapper = shallow(<Home />);
 
-describe('Home', () => {
+describe(`<${Home.name} />`, () => {
   it('should render', () => {
     expect(wrapper).to.have.length(1);
     expect(wrapper.find('.home-container').hasClass('home-container')).to.equal(true);
