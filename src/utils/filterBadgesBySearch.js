@@ -1,24 +1,22 @@
 import Fuse from 'fuse.js';
 
+import queriedBadgeListKeys from '../consts/queriedBadgeListKeys';
+
+import getLongestStringLength from './getLongestString';
+
 const filterBadgesBySearchTerm = (badges, query) => {
+  const longestStringLength = getLongestStringLength(badges);
   if (badges) {
     return new Fuse(badges, {
       shouldSort: true,
       includeScore: true,
       includeMatches: true,
-      threshold: 0.3,
+      threshold: 0.2,
       location: 0,
-      distance: 1000,
+      distance: longestStringLength,
       maxPatternLength: 32,
       minMatchCharLength: 2,
-      keys: [
-        'value.name',
-        'value.description',
-        'value.tags',
-        'value.challenges',
-        'value.creator',
-        'value.index',
-      ],
+      keys: queriedBadgeListKeys,
     }).search(query);
   }
   return [];
