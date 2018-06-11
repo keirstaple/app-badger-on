@@ -6,8 +6,8 @@ import BadgeTile from '../../../src/views/components/badgeTile';
 import getBadgeCategoryDetails from '../../../src/utils/getBadgeCategoryDetails';
 import randomBadge from '../../mocks/mockBadge';
 
-describe('BadgeTile', () => {
-  const wrapper = shallow(<BadgeTile randomBadge={randomBadge} />);
+describe(`<${BadgeTile.name} />`, () => {
+  const wrapper = shallow(<BadgeTile badge={randomBadge} />);
   it('should render', () => {
     expect(wrapper).to.have.length(1);
   });
