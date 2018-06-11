@@ -8,7 +8,7 @@ import badgePropType from '../../consts/propTypes';
 const BadgeSearchList = ({ searchedBadges }) => (
   <div className="badge-list">
     {
-      searchedBadges.map(({ key, value }) => <BadgeTile key={key} badge={value} />)
+      searchedBadges.map(({ item: { key, value } }) => <BadgeTile key={key} badge={value} />)
     }
   </div>
 );
