@@ -2,7 +2,7 @@ import Fuse from 'fuse.js';
 
 import queriedBadgeListKeys from '../consts/queriedBadgeListKeys';
 
-import getLongestStringLength from './getLongestString';
+import getLongestStringLength from './getLongestStringLength';
 
 const filterBadgesBySearchTerm = (badges, query) => {
   const longestStringLength = getLongestStringLength(badges);
