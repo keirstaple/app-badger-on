@@ -1,3 +1,2 @@
 export const RANDOM_BADGE_COUNT = 3;
-export const BADGE_TILE_DESCRIPTION_MAX = 250;
 export const RANDOM_BADGES_HEADER = 'RANDOM BADGES';
