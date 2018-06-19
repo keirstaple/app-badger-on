@@ -1,11 +1,11 @@
 import UPDATE_NAV_BAR_STATUS from '../../actionTypes/navBar';
 import { navBarClosed } from '../../consts/navBar';
 
-export const INITIAL_STATE = {
+export const getInitialState = () => ({
   navBarStatus: navBarClosed,
-};
+});
 
-export const navBar = (state = INITIAL_STATE, action) => {
+export const navBar = (state = getInitialState(), action) => {
   switch (action.type) {
   case UPDATE_NAV_BAR_STATUS:
     return {

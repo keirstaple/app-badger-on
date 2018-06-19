@@ -1,4 +1,4 @@
-import { badges } from './mockBadges.json';
+import { badges } from '../../src/mocks/mockBadges.json';
 
 const mockBadge = badges[0];
 

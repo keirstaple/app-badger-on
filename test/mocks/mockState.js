@@ -1,5 +1,5 @@
 import map from 'lodash/fp/map';
-import { badges } from './mockBadges.json';
+import { badges } from '../../src/mocks/mockBadges.json';
 
 const orderedBadges = map(badge => ({
   key: `${badge.pushId}`, value: badge,

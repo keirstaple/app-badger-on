@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import RandomBadgeTile from '../components/randomBadge/randomBadgeTile';
+import BadgeTile from '../components/badgeTile';
+
 import randomBadgesSelector from '../../state/selectors/randomBadgesSelector';
+
+import badgePropType from '../../consts/propTypes';
+import { RANDOM_BADGES_HEADER } from '../../consts/randomBadges';
 
 class RandomBadges extends Component {
   constructor(props) {
@@ -14,10 +18,10 @@ class RandomBadges extends Component {
     const { randomBadges } = this.props;
     return (
       <div className="random-badges-container">
-        <h2 className="section-header">RANDOM BADGES</h2>
+        <h2 className="section-header">{RANDOM_BADGES_HEADER}</h2>
         <div className="break" />
         {
-          randomBadges.map(({ key, value }) => <RandomBadgeTile key={key} randomBadge={value} />)
+          randomBadges.map(({ key, value }) => <BadgeTile key={key} badge={value} />)
         }
       </div>
     );
@@ -25,23 +29,7 @@ class RandomBadges extends Component {
 }
 
 RandomBadges.propTypes = {
-  randomBadges: PropTypes.arrayOf(PropTypes.shape({
-    category: PropTypes.number,
-    challenges: PropTypes.string,
-    comments: PropTypes.string,
-    creator: PropTypes.string,
-    date: PropTypes.string,
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    index: PropTypes.string,
-    latitude: PropTypes.number,
-    longitude: PropTypes.number,
-    name: PropTypes.string,
-    originalIndex: PropTypes.number,
-    proof: PropTypes.string,
-    pushId: PropTypes.number,
-    tags: PropTypes.string,
-  })).isRequired,
+  randomBadges: PropTypes.arrayOf(PropTypes.shape(badgePropType)).isRequired,
 };
 
 export const baseComponent = RandomBadges;
